@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('password');
             $table->string('sex');
             $table->date('birthday');
+            $table->foreign('address_id')->references('address_id')->on('User_address')->onDelete('');
+            $table->foreign('wishlist_id')->references('wishlist_id')->on('Wishlist');
+            $table->foreign('cart_id')->references('card_id')->on('Cart');
             $table->timestamps();
         });
     }
